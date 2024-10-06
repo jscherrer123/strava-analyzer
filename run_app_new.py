@@ -45,14 +45,13 @@ def run_app():
     goal_distance = 0
     goal_distance = st.number_input(f"Last year, you ran :orange[{dist_km_last_year}] km in total. How many km's do you want to run this year?", value=0, placeholder="Type a km distance...")
 
+    if(goal_distance > 0):
+        pct_of_yearly_goal = round((dist_km_this_year / goal_distance) * 100)
+        st.write(f"### :blue[{pct_of_yearly_goal}%] of your yearly goal completed so far!")
+        st.write(f"To complete your goal this year, you need to run :blue[{round((goal_distance - dist_km_this_year) / weeks_left_in_year)} km] per week.")    
+
     ## Start displaying stats
     st.markdown(f"### This year you have run: \n # :blue[{act_this_year}] times & :blue[{dist_km_this_year}] km \n On this day last year, you had run :orange[{act_last_year_to_date}] times and :orange[{dist_km_last_year_to_date}] km.")
-
-
-    if(goal_distance > 0):
-            pct_of_yearly_goal = round((dist_km_this_year / goal_distance) * 100)
-            st.write(f"### :blue[{pct_of_yearly_goal}%] of your yearly goal completed so far!")
-            st.write(f"To complete your goal this year, you need to run :blue[{round((goal_distance - dist_km_this_year) / weeks_left_in_year)} km] per week.")    
 
     ## Display the last few runs
     st.markdown("### Your latest runs:")
