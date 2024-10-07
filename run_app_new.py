@@ -98,12 +98,15 @@ def run_app():
     ## elevation analysis
     st.markdown(f"### How does elevation affect your pace?")
     
-    # Create scatter plot
+    # Check relationship between elevation gain and speed
     scatterplot(act_to_analyse, 'elevation_gain_per_km', 'average_speed_kmh', 'Speed vs Elevation Gain', 'Elevation Gain per km', 'Average Speed (km/h)')
     # fig = px.scatter(act_to_analyse, x='elevation_gain_per_km', y='average_speed_kmh', 
     #                  title='Speed vs Elevation Gain', trendline='ols', trendline_color_override='darkgreen')
     # fig.update_layout(xaxis_title='Elevation Gain per km', yaxis_title='Average Speed (km/h)')
     # st.plotly_chart(fig)
+
+    # Check relationship between speed and heartrate
+    scatterplot(act_to_analyse, 'average_speed_kmh', 'average_heartrate', 'Speed vs Heartrate', 'Average Speed (km/h)', 'Average Heartrate (BPM)')
 
 if __name__ == '__main__':
     run_app()
