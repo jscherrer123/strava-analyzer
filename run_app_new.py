@@ -106,7 +106,7 @@ def run_app():
     # st.plotly_chart(fig)
 
     # Check relationship between speed and heartrate
-    scatterplot(act_to_analyse, 'average_speed_kmh', 'average_heartrate', 'Speed vs Heartrate', 'Average Speed (km/h)', 'Average Heartrate (BPM)')
+    scatterplot(act_to_analyse, 'average_speed_kmh', 'average_heartrate', 'Speed vs Heartrate', 'Average Speed (km/h)', 'Average Heartrate (BPM)', act_to_analyse['year'])
 
 if __name__ == '__main__':
     run_app()

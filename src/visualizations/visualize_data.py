@@ -16,8 +16,8 @@ def barplot(df, x, y, title, x_title, y_title):
     fig.update_yaxes(title_text=y_title)
     st.plotly_chart(fig)
 
-def scatterplot(df, x, y, title, x_title, y_title):
-    fig = px.scatter(df, x=x, y=y, title=title, trendline='ols', trendline_color_override='darkgreen')
+def scatterplot(df, x, y, title, x_title, y_title, year=None):
+    fig = px.scatter(df, x=x, y=y, title=title, trendline='ols', trendline_color_override='darkgreen', color = year)
     fig.update_xaxes(title_text=x_title)
     fig.update_yaxes(title_text=y_title)
     st.plotly_chart(fig)
